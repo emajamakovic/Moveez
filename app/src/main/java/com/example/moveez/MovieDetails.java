@@ -17,6 +17,12 @@ public class MovieDetails extends AppCompatActivity {
     private TextView actors;
     private TextView projection;
 
+
+    public static final String MOVIE_NAME = "";
+    public static final String MOVIE_PROJECTION = "";
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,12 +46,20 @@ public class MovieDetails extends AppCompatActivity {
             actors.setText(extras.getString(MovieFragment.EXTRA_ACTORS));
             projection.setText(extras.getString(MovieFragment.EXTRA_PROJECTION));
 
+
         }
     }
 
     public void reserve(View view) {
-            Intent intent = new Intent(this, Reserve.class);
-            startActivity(intent);
-        }
-    }
+//        movie_name = getIntent().getStringExtra("EXTRA_NAME");
+//        movie_projection = getIntent().getStringExtra("EXTRA_PROJECTION");
 
+
+        Intent intent = new Intent(this, Reserve.class);
+        String movie_name = name.getText().toString();
+        Movie movie = MovieDatabase.getInstance(this).movieDao().getMovieByName(movie_name);
+        intent.putExtra(MOVIE_NAME, movie.getName());
+        intent.putExtra(MOVIE_PROJECTION, movie.getProjection());
+        startActivity(intent);
+    }
+}

@@ -3,8 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/main_page.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/movie_details.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/movie_layout.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/movielist_layout.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/notifications_layout.xml" value="0.223731884057971" />
         <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/profile_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/register.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/reservation_layout.xml" value="0.223731884057971" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/reservationlist_layout.xml" value="0.223731884057971" />
         <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/reserve_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Korisnik/Desktop/Moveez/app/src/main/res/layout/welcome.xml" value="0.223731884057971" />
       </map>
     </option>
   </component>

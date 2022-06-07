@@ -16,4 +16,7 @@ public interface MovieDao {
 
     @Query("SELECT * FROM movies WHERE id = :id LIMIT 1")
     Movie getMovieById(long id);
+
+    @Query("SELECT * FROM movies WHERE name = :name LIMIT 1")
+    Movie getMovieByName(String name);
 }
