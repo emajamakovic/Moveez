@@ -43,6 +43,10 @@ public class ReservationAdapter extends BaseAdapter {
         TextView username = convertView.findViewById(R.id.reservation);
         TextView projection = convertView.findViewById(R.id.projection);
 
+
+
+    //    reservationmovie.setText((String.valueOf(reservation.getUser_id())));
+
 /*
         username.setText(reservation.getName());
         actors.setText(movie.getActors());*/

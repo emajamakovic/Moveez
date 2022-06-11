@@ -40,7 +40,7 @@ public class MovieAdapter extends BaseAdapter {
         view= inflater.inflate(R.layout.movielist_layout,viewGroup, false);
 
         Movie movie= (Movie) getItem(i);
-        ImageView image = view.findViewById(R.id.movie_image);
+        ImageView image = view.findViewById(R.id.image);
         TextView name= view.findViewById(R.id.movie_name);
         TextView actors=view.findViewById(R.id.movie_actors);
         TextView projection=view.findViewById(R.id.movie_projection);

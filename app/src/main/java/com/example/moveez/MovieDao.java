@@ -8,15 +8,15 @@ import java.util.List;
 
 @Dao
 public interface MovieDao {
-    @Query("SELECT * FROM movies")
-    public List<Movie> getAll();
+        @Query("SELECT * FROM movies")
+        public List<Movie> getAll();
 
-    @Insert
-    public void addItem(Movie movie );
+        @Insert
+        public void addMovie(Movie movie );
 
-    @Query("SELECT * FROM movies WHERE id = :id LIMIT 1")
-    Movie getMovieById(long id);
+        @Query("SELECT * FROM movies WHERE id = :id LIMIT 1")
+        Movie getMovieById(long id);
 
-    @Query("SELECT * FROM movies WHERE name = :name LIMIT 1")
-    Movie getMovieByName(String name);
-}
+        @Query("SELECT * FROM movies WHERE name = :name LIMIT 1")
+        Movie getMovieByName(String name);
+    }

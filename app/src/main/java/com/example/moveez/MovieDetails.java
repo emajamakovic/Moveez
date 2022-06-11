@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,9 +16,11 @@ public class MovieDetails extends AppCompatActivity {
     private TextView actors;
     private TextView projection;
 
+    public static final String MOVIE_NAME = "MOVIE_NAME";
+    public static final String MOVIE_IMAGE = "MOVIE_IMAGE";
+    public static final String MOVIE_PROJECTION = "MOVIE_PROJECTION";
 
-    public static final String MOVIE_NAME = "";
-    public static final String MOVIE_PROJECTION = "";
+
 
 
 
@@ -28,7 +29,7 @@ public class MovieDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movie_details);
 
-        imageView = findViewById(R.id.movie_image);
+        imageView = findViewById(R.id.image);
         name = findViewById(R.id.name_movie);
         year = findViewById(R.id.year_movie);
         genre = findViewById(R.id.genre_movie);
@@ -51,15 +52,14 @@ public class MovieDetails extends AppCompatActivity {
     }
 
     public void reserve(View view) {
-//        movie_name = getIntent().getStringExtra("EXTRA_NAME");
-//        movie_projection = getIntent().getStringExtra("EXTRA_PROJECTION");
-
-
         Intent intent = new Intent(this, Reserve.class);
         String movie_name = name.getText().toString();
         Movie movie = MovieDatabase.getInstance(this).movieDao().getMovieByName(movie_name);
+        intent.putExtra(MOVIE_IMAGE, movie.getImageResId());
         intent.putExtra(MOVIE_NAME, movie.getName());
         intent.putExtra(MOVIE_PROJECTION, movie.getProjection());
         startActivity(intent);
     }
+
+
 }

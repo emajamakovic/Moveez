@@ -29,4 +29,6 @@ public interface UserDao {
 
     @Query("SELECT id FROM user WHERE email = :email LIMIT 1")
     public int getUserIDByEmail(String email);
+
+
 }

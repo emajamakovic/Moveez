@@ -93,6 +93,14 @@ public class ProfileFragment extends Fragment{
         profileImage = getView().findViewById(R.id.profile_image);
         addImgBtn=getView().findViewById(R.id.add_button);
 
+        if( (user.getUserImage()!=null) && (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED)) {
+            profileImage.setImageURI(Uri.parse(user.getUserImage()));
+        }
+        else {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PICK_FROM_GALLERY);
+        }
+
+
         addImgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,6 +139,8 @@ public class ProfileFragment extends Fragment{
                     String image = selectedImage.toString();
                     user.setUserImage(image);
                     profileImage.setImageURI(selectedImage);
+
+                    MovieDatabase.getInstance(getActivity()).userDao().update(user);
                 }
 
     }

@@ -62,12 +62,36 @@ public class MovieFragment extends  Fragment {
         private List<Movie> getMovie()
         {
             List<Movie> movieList = new ArrayList<>();
-            movieList.add(new Movie(R.drawable.movie1,"Avatar","2009","Sci-fi","Zoe Saldana, Sam Worthington","Date: 10/06/2022 Time: 18:00"));
-            movieList.add(new Movie(R.drawable.movie2,"Cherry","2021","Drama","Tom Holland, Ciara Bravo","Date: 12/06/2022 Time: 17:00"));
-            movieList.add(new Movie(R.drawable.movie3,"Split","2016","Horror","James McAvoy, Ana Taylor-Joy","Date: 12/06/2022 Time: 20:00"));
-            movieList.add(new Movie(R.drawable.movie4,"Whiplash","2014","Music","Milles Teller, J.K. Simmons","Date: 14/06/2022 Time: 16:00"));
-            movieList.add(new Movie(R.drawable.movie5,"Dune","2021","Action","Timothee Chalamet, Zendaya","Date: 15/06/2022 Time: 18:00"));
-
+            Movie movie1 = new Movie(R.drawable.movie1,"Avatar","2009","Sci-fi","Zoe Saldana, Sam Worthington","Date: 10/06/2022 Time: 18:00");
+            movieList.add(movie1);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie1);
+            Movie movie2 = new Movie(R.drawable.movie2,"Cherry","2021","Drama","Tom Holland, Ciara Bravo","Date: 12/06/2022 Time: 17:00");
+            movieList.add(movie2);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie2);
+            Movie movie3 = new Movie(R.drawable.movie3,"Split","2016","Horror","James McAvoy, Ana Taylor-Joy","Date: 12/06/2022 Time: 20:00");
+            movieList.add(movie3);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie3);
+            Movie movie4 = new Movie(R.drawable.movie4,"Whiplash","2014","Music","Milles Teller, J.K. Simmons","Date: 14/06/2022 Time: 16:00");
+            movieList.add(movie4);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie4);
+            Movie movie5 = new Movie(R.drawable.movie5,"Dune","2021","Action","Timothee Chalamet, Zendaya","Date: 15/06/2022 Time: 18:00");
+            movieList.add(movie5);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie5);
+            Movie movie6 = new Movie(R.drawable.movie6,"Dead Poets Society","1989","Comedy","Robin Williams, Ethan Hawke","Date: 10/07/2022 Time: 18:00");
+            movieList.add(movie6);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie6);
+            Movie movie7 = new Movie(R.drawable.movie7,"La La Land","2016","Musical","Emma Stone, Ryan Gosling","Date: 12/07/2022 Time: 17:00");
+            movieList.add(movie7);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie7);
+            Movie movie8 = new Movie(R.drawable.movie8,"The Platform","2019","Horror","Ivan Massague, Zorion Eguileor","Date: 12/07/2022 Time: 20:00");
+            movieList.add(movie8);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie8);
+            Movie movie9 = new Movie(R.drawable.movie9,"Tenet","2020","Adventure","John David Washington, Edward Pattinson","Date: 14/07/2022 Time: 16:00");
+            movieList.add(movie9);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie9);
+            Movie movie10 = new Movie(R.drawable.movie10,"Seven","1995","Crime","Morgan Freeman, Brad Pitt","Date: 15/07/2022 Time: 18:00");
+            movieList.add(movie10);
+            MovieDatabase.getInstance(getContext()).movieDao().addMovie(movie10);
             return movieList;
         }
 }

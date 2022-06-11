@@ -65,7 +65,7 @@ public class MainPage extends AppCompatActivity {
     private void setUpAdapter(ViewPager viewPager){
         FragmentAdapter viewPageAdapter= new FragmentAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPageAdapter.addFragment(new MovieFragment());
-        viewPageAdapter.addFragment(new ReservationFragment());
+        viewPageAdapter.addFragment(new ReservationFragment(id));
         viewPageAdapter.addFragment(new NotificationsFragment());
         viewPageAdapter.addFragment(new ProfileFragment(username, email, id));
         viewPager.setAdapter(viewPageAdapter);

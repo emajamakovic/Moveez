@@ -7,7 +7,7 @@
     android:background="@drawable/backgrnd">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/white_block"
         android:layout_width="403dp"
         android:layout_height="312dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="@+id/white_block" />
 
     <TextView
         android:id="@+id/email_profil"
@@ -37,7 +37,7 @@
         android:fontFamily="@font/aclonica"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/white_block"
         app:layout_constraintTop_toBottomOf="@+id/username_profil" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

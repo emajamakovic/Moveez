@@ -19,7 +19,7 @@ public interface ReservationDao {
     Reservation getReservationById(long id);
 
     @Query(
-            "SELECT * FROM reservations JOIN user ON user_id = user.id"
+            "SELECT * FROM reservations r JOIN user u ON r.user_id = u.id"
     )
     public Map<User, List<Reservation>> loadUserReservations();
 
@@ -27,4 +27,11 @@ public interface ReservationDao {
             "SELECT * FROM reservations JOIN movies ON movie_id = movies.id"
     )
     public Map<Movie, List<Reservation>> loadUserMovieReservations();
+
+    @Query("SELECT * FROM reservations WHERE user_id = :user_id")
+    Reservation getReservationByUserId(long user_id);
+
+
+
+
 }
