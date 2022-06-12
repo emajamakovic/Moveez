@@ -64,9 +64,8 @@ public class MainPage extends AppCompatActivity {
     }
     private void setUpAdapter(ViewPager viewPager){
         FragmentAdapter viewPageAdapter= new FragmentAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        viewPageAdapter.addFragment(new MovieFragment());
+        viewPageAdapter.addFragment(new MovieFragment(id));
         viewPageAdapter.addFragment(new ReservationFragment(id));
-        viewPageAdapter.addFragment(new NotificationsFragment());
         viewPageAdapter.addFragment(new ProfileFragment(username, email, id));
         viewPager.setAdapter(viewPageAdapter);
     }
@@ -81,11 +80,8 @@ public class MainPage extends AppCompatActivity {
                 case R.id.nav_reservation:
                     viewPager.setCurrentItem(1);
                     return true;
-                case R.id.nav_notifications:
-                    viewPager.setCurrentItem(2);
-                    return true;
                 case R.id.nav_profile:
-                    viewPager.setCurrentItem(3);
+                    viewPager.setCurrentItem(2);
                     return true;
                 default:
                     return false;

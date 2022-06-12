@@ -10,10 +10,7 @@
         android:id="@+id/nav_reservation"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"
         android:title="@string/reservation" />
-    <item
-        android:id="@+id/nav_notifications"
-        android:icon="@drawable/ic_baseline_notifications_24"
-        android:title="@string/notifications" />
+
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_baseline_person_24"

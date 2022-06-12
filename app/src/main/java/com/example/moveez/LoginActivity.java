@@ -2,6 +2,7 @@ package com.example.moveez;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -33,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MainPage.class);
             intent.putExtra(USER_ID, user.getId());
             startActivity(intent);
+            Log.d("error", " ");
         }
     }
 

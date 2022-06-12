@@ -26,6 +26,7 @@ public class Reserve extends AppCompatActivity {
     public static final String MOVIE_PROJECTION = "MOVIE_PROJECTION";
 
     public static final String CHANNEL_ID = "My channel";
+    private long id;
 
 
 
@@ -41,6 +42,7 @@ public class Reserve extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
+            id=extras.getLong(MovieDetails.USER_ID);
             setTitle(extras.getString(MovieDetails.MOVIE_NAME));
             movieImage.setImageResource(extras.getInt(MovieDetails.MOVIE_IMAGE));
             movieName.setText(extras.getString(MovieDetails.MOVIE_NAME));
@@ -71,6 +73,9 @@ public class Reserve extends AppCompatActivity {
 //        intent.putExtra(MOVIE_PROJECTION, movie_projection);
 //        startActivity(intent);
 
+        Reservation reservation = new Reservation(movieName.getText().toString(), movieProjection.getText().toString(),id);
+        MovieDatabase.getInstance(this).reservationDao().addReservation(reservation);
+
 
         new AlertDialog.Builder(Reserve.this).setTitle("Moveez").setMessage("Your reservation is complete!").show();
 
@@ -89,4 +94,5 @@ public class Reserve extends AppCompatActivity {
 
 
     }
+
 }

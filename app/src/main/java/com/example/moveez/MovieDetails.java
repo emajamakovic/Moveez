@@ -15,13 +15,12 @@ public class MovieDetails extends AppCompatActivity {
     private TextView genre;
     private TextView actors;
     private TextView projection;
+    private long id;
 
     public static final String MOVIE_NAME = "MOVIE_NAME";
     public static final String MOVIE_IMAGE = "MOVIE_IMAGE";
     public static final String MOVIE_PROJECTION = "MOVIE_PROJECTION";
-
-
-
+    public static final String USER_ID = "USER_ID";
 
 
     @Override
@@ -39,6 +38,7 @@ public class MovieDetails extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
+            id = extras.getLong(MovieFragment.USER_ID);
             setTitle(extras.getString(MovieFragment.EXTRA_NAME));
             imageView.setImageResource(extras.getInt(MovieFragment.EXTRA_IMAGE));
             name.setText(extras.getString(MovieFragment.EXTRA_NAME));
@@ -55,6 +55,7 @@ public class MovieDetails extends AppCompatActivity {
         Intent intent = new Intent(this, Reserve.class);
         String movie_name = name.getText().toString();
         Movie movie = MovieDatabase.getInstance(this).movieDao().getMovieByName(movie_name);
+        intent.putExtra(USER_ID,id);
         intent.putExtra(MOVIE_IMAGE, movie.getImageResId());
         intent.putExtra(MOVIE_NAME, movie.getName());
         intent.putExtra(MOVIE_PROJECTION, movie.getProjection());

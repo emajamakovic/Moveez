@@ -23,7 +23,15 @@ public class MovieFragment extends  Fragment {
     public static final String EXTRA_GENRE = "EXTRA_GENRE";
     public static final String EXTRA_ACTORS= "EXTRA_ACTORS";
     public static final String EXTRA_PROJECTION = "EXTRA_PROJECTION";
+    public static final String USER_ID = "USER_ID";
 
+    private long user_id;
+
+
+
+    public MovieFragment(long id) {
+        this.user_id = id;
+    }
 
     @Nullable
     @Override
@@ -47,6 +55,7 @@ public class MovieFragment extends  Fragment {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Movie movie = (Movie) parent.getItemAtPosition(position);
             Intent intent = new Intent(getContext(), MovieDetails.class);
+            intent.putExtra(USER_ID, user_id);
             intent.putExtra(EXTRA_IMAGE, movie.getImageResId());
             intent.putExtra(EXTRA_NAME, movie.getName());
             intent.putExtra(EXTRA_ACTORS, movie.getActors());
